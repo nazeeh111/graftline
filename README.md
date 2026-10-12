@@ -100,12 +100,15 @@ python3 -I -S run.py verify features/utf8proc features/utf8proc/cases.json
 python3 -I -S tests/test_boundaries.py
 ```
 
-The verifier exits nonzero for a mismatch, refusal or empty corpus. Eleven focused
+The verifier exits nonzero for a mismatch, refusal or empty corpus. Thirteen focused
 boundary tests cover live heap bounds across guest/helper access, zero extents, ownership/reallocation, checked memory, repeated state,
 identity/ABI validation, unknown paths/dependencies, verifier status and output
-preservation. The included GitHub workflow runs these standard-library commands
-with a five-minute job bound. It has not been pushed or run on GitHub; cross-host
-execution remains unverified locally.
+preservation, overlapping register values and direct/indirect control flow.
+The included GitHub workflow runs these standard-library commands with a
+five-minute job bound. See the [latest hosted CI status](https://github.com/nazeeh111/graftline/actions/workflows/verify.yml).
+The first hosted run refused the longest Unicode witness at the 15-second
+execution limit. The runtime update removes repeated buffer conversions and
+operand classification; the limits, capsules and witnesses remain unchanged.
 
 Project runtime/tools are MIT-licensed. Extracted Zstandard code/data remains
 BSD-licensed; utf8proc code and Unicode data retain their included notices.

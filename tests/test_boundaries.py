@@ -74,6 +74,37 @@ class Boundaries(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError,'single-use'):v.invoke([0,0,0,0],[])
         self.assertEqual(v.stats['instructions'],count)
 
+    def test_value_width_endian_and_overlapping_aliases(self):
+        v=VM(self.feature.capsule)
+        for space in ('register','unique'):
+            for size in (1,2,4,8,16):
+                off=513;node=[space,off,size];mask=(1<<(size*8))-1
+                for value in (-2,0x123456789abcdef0123456789abcdef):
+                    v.write(node,value)
+                    self.assertEqual(v.spaces[space][off:off+size],(value&mask).to_bytes(size,'little'))
+                    self.assertEqual(v.read(node),value&mask)
+            v.write([space,800,8],0x0102030405060708)
+            v.write([space,803,2],0xaabb)
+            self.assertEqual(v.read([space,800,8]),0x010203aabb060708)
+            self.assertEqual(v.read([space,801,4]),0xaabb0607)
+            original=len(v.spaces[space])
+            for node in ([space,original-1,4],[space,-1,1]):
+                with self.assertRaisesRegex(RuntimeError,'temporary budget'):v.read(node)
+                with self.assertRaisesRegex(RuntimeError,'temporary budget'):v.write(node,1)
+            self.assertEqual(len(v.spaces[space]),original)
+
+    def test_direct_targets_and_conditional_control_flow(self):
+        v=VM(self.feature.capsule);start=v.pc;target=0x12345678
+        for op,condition,expected in [('BRANCH',1,target),('CALL',1,target),('CBRANCH',1,target),('CBRANCH',0,start+4)]:
+            v.pc=start;inputs=[['ram',target,8]]
+            if op=='CBRANCH':inputs.append(['const',condition,1])
+            v.ops[start]=[(op,None,inputs)]
+            v.instruction();self.assertEqual(v.pc,expected)
+        # Indirect RAM operands still mean a value read through the memory gate.
+        v.mem.write(0x40000000,target.to_bytes(8,'little'));v.pc=start
+        v.ops[start]=[('BRANCHIND',None,[['ram',0x40000000,8]])]
+        v.instruction();self.assertEqual(v.pc,target)
+
     def test_parameter_boundaries(self):
         for parameters in ({},{'options':True},{'options':-1},{'options':32768},{'options':1070,'extra':0}):
             with self.subTest(parameters=parameters):

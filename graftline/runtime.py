@@ -1,4 +1,10 @@
-import base64, json, time
+import base64, json, struct, time
+
+# Fixed-width unpack/pack operates directly on the shared byte buffers. It
+# preserves overlapping register/temporary aliases without allocating a slice
+# and intermediate bytes for every interpreted value.
+_INTEGERS = {size: (struct.Struct(format), (1 << (size * 8)) - 1)
+             for size, format in ((1, '<B'), (2, '<H'), (4, '<I'), (8, '<Q'))}
 
 class Memory:
 
@@ -72,17 +78,27 @@ class VM:
         if space == 'ram':
             return int.from_bytes(self.mem.read(off, size), 'little')
         d = self.spaces[space]
-        if off + size > len(d):
+        if off < 0 or size < 0 or off + size > len(d):
             raise RuntimeError('P-code temporary budget exceeded')
+        integer = _INTEGERS.get(size)
+        if integer is not None:
+            return integer[0].unpack_from(d, off)[0]
         return int.from_bytes(d[off:off + size], 'little')
 
     def write(self, n, value):
         space, off, size = n
-        data = (value & (1 << size * 8) - 1).to_bytes(size, 'little')
         if space == 'ram':
+            data = (value & (1 << size * 8) - 1).to_bytes(size, 'little')
             self.mem.write(off, data)
         else:
-            self.spaces[space][off:off + size] = data
+            d = self.spaces[space]
+            if off < 0 or size < 0 or off + size > len(d):
+                raise RuntimeError('P-code temporary budget exceeded')
+            integer = _INTEGERS.get(size)
+            if integer is not None:
+                integer[0].pack_into(d, off, value & integer[1])
+            else:
+                d[off:off + size] = (value & (1 << size * 8) - 1).to_bytes(size, 'little')
 
     def reg(self, name, value=None):
         n = self.names[name]
@@ -164,11 +180,20 @@ class VM:
         self.stats['executed_addresses'].add(self.pc)
         self.stats['instructions'] += 1
         nextpc, i = (self.pc + 4, 0)
+        read = self.read
         while i < len(ops):
             op, out, ins = ops[i]
             self.stats['opcodes'].add(op)
             self.stats['pcode_ops'] += 1
-            vals = [n[1] if i == 0 and op in ('BRANCH', 'CBRANCH', 'CALL') and (n[0] == 'ram') else self.read(n) for i, n in enumerate(ins)] if op not in ('LOAD', 'STORE') else []
+            if op in ('LOAD', 'STORE'):
+                vals = []
+            elif op in ('BRANCH', 'CBRANCH', 'CALL') and ins[0][0] == 'ram':
+                # Only a direct control-flow target denotes its address rather
+                # than a memory value. Classify once per operation, not again
+                # for every ordinary arithmetic operand.
+                vals = [ins[0][1]] + [read(n) for n in ins[1:]]
+            else:
+                vals = [read(n) for n in ins]
             value = None
             if op == 'COPY':
                 value = vals[0]

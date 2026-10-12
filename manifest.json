@@ -12,8 +12,8 @@
     "sha256": "69e82d81f296fb93e6db71686ff8c60d0728f5dd115addb0efbd56148793deba"
   },
   "FREEZE.json": {
-    "bytes": 5028,
-    "sha256": "5b5d40fb3d96d8e3b695ba27def12006ef0fd95e488698afc1d2ad6a143be0a4"
+    "bytes": 5030,
+    "sha256": "68b9fca4bd02dfb891b3d1003f99f5dcfab055aa837875a8c585e6ff47ec181c"
   },
   "LICENSE": {
     "bytes": 1079,
@@ -24,8 +24,8 @@
     "sha256": "ebd3b3ddf8dd165f71deab454554b59dd15a6d47814bc58eebdd4edb1026e6a9"
   },
   "README.md": {
-    "bytes": 7399,
-    "sha256": "7c761805bb23b32a99fb9fe5432631c0ff009391cec9e71f0b5c84ca6f782aff"
+    "bytes": 7704,
+    "sha256": "64d7275cf69f9e2153e952fb2c4a23687d976a658dec8ab60b84fc12e9ae8b2a"
   },
   "features/utf8proc/LICENSE.md": {
     "bytes": 5125,
@@ -120,16 +120,16 @@
     "sha256": "eb0dd8cddeefbe76c9cffe86c59174878a4d112c3961e940204cb0a96a576a3e"
   },
   "graftline/runtime.py": {
-    "bytes": 12778,
-    "sha256": "7b26167484e808f6c7384d0862ba339407019bc1d7ec129e49cd0758bf1a62c3"
+    "bytes": 13982,
+    "sha256": "657338c57e3d912ef7d4504f08a8301362688285f41d149919cf869184582968"
   },
   "run.py": {
     "bytes": 220,
     "sha256": "9a95aacae3f1469e166e49e8db675679feff6385a0ff40789f17a3c120d52e0b"
   },
   "tests/test_boundaries.py": {
-    "bytes": 8552,
-    "sha256": "756867d28ad905af779618d99ebfcc744d894cd2647224e8634d4bca9e5873c3"
+    "bytes": 10392,
+    "sha256": "e3c774bd444e5900c9589f3465b1fada4a7c6cfe532dc72f7fd42b3e998c3d44"
   },
   "tools/bind.py": {
     "bytes": 1285,
