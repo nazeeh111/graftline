@@ -1,0 +1,623 @@
+{
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+    "-I",
+    "-S",
+    "outputs/graftline/run.py",
+    "verify",
+    "outputs/graftline/features/zstd",
+    "outputs/graftline/features/zstd/cases.json"
+  ],
+  "exitCode": 0,
+  "casesSha256": "bbd06c5ededbf366e0fc3374ba057d8b2172742d292d45029ea5e9bc7848adf8",
+  "rows": [
+    {
+      "returnValue": 1,
+      "instructions": 1600,
+      "pcodeOps": 4790,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 1,
+        "free": 1
+      },
+      "label": "blind-single",
+      "matched": true
+    },
+    {
+      "returnValue": 1763,
+      "instructions": 6896,
+      "pcodeOps": 21025,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 2,
+        "free": 1
+      },
+      "label": "blind-unicode",
+      "matched": true
+    },
+    {
+      "returnValue": 6311,
+      "instructions": 192422,
+      "pcodeOps": 574345,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 4,
+        "memmove": 2,
+        "bzero": 2,
+        "free": 1
+      },
+      "label": "blind-alphabet-skew",
+      "matched": true
+    },
+    {
+      "returnValue": 9781,
+      "instructions": 20908,
+      "pcodeOps": 64311,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 2,
+        "free": 1
+      },
+      "label": "blind-gradient",
+      "matched": true
+    },
+    {
+      "returnValue": 65537,
+      "instructions": 1627,
+      "pcodeOps": 4878,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 1,
+        "free": 1
+      },
+      "label": "blind-raw-random",
+      "matched": true
+    },
+    {
+      "returnValue": 139363,
+      "instructions": 249970,
+      "pcodeOps": 771822,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 4,
+        "free": 1
+      },
+      "label": "blind-multiple-blocks",
+      "matched": true
+    },
+    {
+      "returnValue": 77,
+      "instructions": 1600,
+      "pcodeOps": 4790,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 1,
+        "free": 1
+      },
+      "label": "blind-raw-short",
+      "matched": true
+    },
+    {
+      "returnValue": 5625,
+      "instructions": 22774,
+      "pcodeOps": 73971,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 2,
+        "free": 1
+      },
+      "label": "blind-sparse-zeroes",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551544,
+      "instructions": 961,
+      "pcodeOps": 2851,
+      "externalCalls": {
+        "malloc": 1,
+        "free": 1
+      },
+      "label": "blind-malformed",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551544,
+      "instructions": 1463,
+      "pcodeOps": 4377,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "blind-truncated",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551546,
+      "instructions": 3492,
+      "pcodeOps": 10425,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 1,
+        "free": 1
+      },
+      "label": "blind-short-capacity",
+      "matched": true
+    },
+    {
+      "returnValue": 156000,
+      "instructions": 279637,
+      "pcodeOps": 860581,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 4,
+        "free": 1
+      },
+      "label": "repeat--5",
+      "matched": true
+    },
+    {
+      "returnValue": 156000,
+      "instructions": 279581,
+      "pcodeOps": 860397,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 4,
+        "free": 1
+      },
+      "label": "repeat-1",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551546,
+      "instructions": 235114,
+      "pcodeOps": 725888,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 3,
+        "free": 1
+      },
+      "label": "repeat-capacity-minus-one",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551544,
+      "instructions": 233217,
+      "pcodeOps": 720198,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 2,
+        "free": 1
+      },
+      "label": "repeat-truncated",
+      "matched": true
+    },
+    {
+      "returnValue": 156000,
+      "instructions": 279610,
+      "pcodeOps": 860446,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 4,
+        "free": 1
+      },
+      "label": "repeat-22",
+      "matched": true
+    },
+    {
+      "returnValue": 23000,
+      "instructions": 1627,
+      "pcodeOps": 4878,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 1,
+        "free": 1
+      },
+      "label": "skew--5",
+      "matched": true
+    },
+    {
+      "returnValue": 23000,
+      "instructions": 712434,
+      "pcodeOps": 2058419,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 4,
+        "bzero": 1,
+        "memmove": 1,
+        "free": 1
+      },
+      "label": "skew-1",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551546,
+      "instructions": 1774,
+      "pcodeOps": 5300,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "skew-capacity-minus-one",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551544,
+      "instructions": 1463,
+      "pcodeOps": 4377,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "skew-truncated",
+      "matched": true
+    },
+    {
+      "returnValue": 23000,
+      "instructions": 814871,
+      "pcodeOps": 2382445,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 4,
+        "bzero": 4,
+        "memmove": 1,
+        "free": 1
+      },
+      "label": "skew-22",
+      "matched": true
+    },
+    {
+      "returnValue": 32769,
+      "instructions": 1627,
+      "pcodeOps": 4878,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 1,
+        "free": 1
+      },
+      "label": "random--5",
+      "matched": true
+    },
+    {
+      "returnValue": 32769,
+      "instructions": 1627,
+      "pcodeOps": 4878,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 1,
+        "free": 1
+      },
+      "label": "random-1",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551546,
+      "instructions": 1523,
+      "pcodeOps": 4543,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "random-capacity-minus-one",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551544,
+      "instructions": 1463,
+      "pcodeOps": 4377,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "random-truncated",
+      "matched": true
+    },
+    {
+      "returnValue": 32769,
+      "instructions": 1627,
+      "pcodeOps": 4878,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 1,
+        "free": 1
+      },
+      "label": "random-22",
+      "matched": true
+    },
+    {
+      "returnValue": 131100,
+      "instructions": 495625,
+      "pcodeOps": 1618143,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 2,
+        "memmove": 2,
+        "free": 1
+      },
+      "label": "zero--5",
+      "matched": true
+    },
+    {
+      "returnValue": 131100,
+      "instructions": 495599,
+      "pcodeOps": 1618057,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 2,
+        "memmove": 2,
+        "free": 1
+      },
+      "label": "zero-1",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551546,
+      "instructions": 495509,
+      "pcodeOps": 1617767,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 2,
+        "free": 1
+      },
+      "label": "zero-capacity-minus-one",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551544,
+      "instructions": 495362,
+      "pcodeOps": 1617316,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 2,
+        "free": 1
+      },
+      "label": "zero-truncated",
+      "matched": true
+    },
+    {
+      "returnValue": 131100,
+      "instructions": 495593,
+      "pcodeOps": 1618043,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 2,
+        "memmove": 2,
+        "free": 1
+      },
+      "label": "zero-22",
+      "matched": true
+    },
+    {
+      "returnValue": 53200,
+      "instructions": 458783,
+      "pcodeOps": 1251822,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "__memset_chk": 1,
+        "memmove": 2,
+        "__memcpy_chk": 1,
+        "free": 1
+      },
+      "label": "checksum",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551594,
+      "instructions": 458718,
+      "pcodeOps": 1251604,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "__memset_chk": 1,
+        "memmove": 2,
+        "__memcpy_chk": 1,
+        "free": 1
+      },
+      "label": "checksum-bad-checksum",
+      "matched": true
+    },
+    {
+      "returnValue": 53200,
+      "instructions": 97386,
+      "pcodeOps": 294106,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "memmove": 2,
+        "free": 1
+      },
+      "label": "no-size",
+      "matched": true
+    },
+    {
+      "returnValue": 53200,
+      "instructions": 458737,
+      "pcodeOps": 1251684,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "__memset_chk": 1,
+        "memmove": 2,
+        "__memcpy_chk": 1,
+        "free": 1
+      },
+      "label": "checksum-no-size",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551594,
+      "instructions": 458672,
+      "pcodeOps": 1251466,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "__memset_chk": 1,
+        "memmove": 2,
+        "__memcpy_chk": 1,
+        "free": 1
+      },
+      "label": "checksum-no-size-bad-checksum",
+      "matched": true
+    },
+    {
+      "returnValue": 3810,
+      "instructions": 21077,
+      "pcodeOps": 68114,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 2,
+        "memmove": 4,
+        "free": 1
+      },
+      "label": "concatenated",
+      "matched": true
+    },
+    {
+      "returnValue": 0,
+      "instructions": 666,
+      "pcodeOps": 1977,
+      "externalCalls": {
+        "malloc": 1,
+        "free": 1
+      },
+      "label": "skip-only",
+      "matched": true
+    },
+    {
+      "returnValue": 3810,
+      "instructions": 21746,
+      "pcodeOps": 70169,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 2,
+        "memmove": 4,
+        "free": 1
+      },
+      "label": "skip-concatenated",
+      "matched": true
+    },
+    {
+      "returnValue": 0,
+      "instructions": 443,
+      "pcodeOps": 1292,
+      "externalCalls": {
+        "malloc": 1,
+        "free": 1
+      },
+      "label": "random-invalid-0",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551544,
+      "instructions": 848,
+      "pcodeOps": 2478,
+      "externalCalls": {
+        "malloc": 1,
+        "free": 1
+      },
+      "label": "random-invalid-1",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551606,
+      "instructions": 1140,
+      "pcodeOps": 3366,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "random-invalid-2",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551606,
+      "instructions": 1146,
+      "pcodeOps": 3385,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "random-invalid-3",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551606,
+      "instructions": 1146,
+      "pcodeOps": 3385,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "random-invalid-4",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551606,
+      "instructions": 1146,
+      "pcodeOps": 3385,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "random-invalid-5",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551606,
+      "instructions": 1146,
+      "pcodeOps": 3385,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "random-invalid-6",
+      "matched": true
+    },
+    {
+      "returnValue": 18446744073709551606,
+      "instructions": 1146,
+      "pcodeOps": 3385,
+      "externalCalls": {
+        "malloc": 1,
+        "memset": 1,
+        "free": 1
+      },
+      "label": "random-invalid-7",
+      "matched": true
+    }
+  ],
+  "summary": {
+    "completed": 47,
+    "matched": 47,
+    "refused": 0
+  }
+}

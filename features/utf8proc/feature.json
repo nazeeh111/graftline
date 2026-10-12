@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "name": "utf8proc",
+  "entrySymbol": "utf8proc_map",
+  "entry": 4433802964,
+  "capsuleSha256": "0c6387f147150ae1f06ed73050628566693872916a6ff39c6b63736ca58f39e4",
+  "target": {
+    "original": "/Applications/MATLAB_R2026a.app/bin/maca64/libutf8proc.2.5.0.dylib",
+    "originalSha256": "94943e7f1e22d774aded2038d8cf56cbe313893a1b6e36c918c8070c65b7c0e1",
+    "thinSha256": "94943e7f1e22d774aded2038d8cf56cbe313893a1b6e36c918c8070c65b7c0e1",
+    "version": "2.7.0",
+    "entrySymbol": "utf8proc_map",
+    "bytes": 400448
+  },
+  "abi": {
+    "arguments": [
+      {
+        "kind": "input"
+      },
+      {
+        "kind": "input-length"
+      },
+      {
+        "kind": "pointer-cell",
+        "name": "result"
+      },
+      {
+        "kind": "scalar",
+        "name": "options",
+        "minimum": 0,
+        "maximum": 32767
+      }
+    ],
+    "return": {
+      "kind": "allocated-buffer",
+      "signed": true,
+      "pointerCell": "result"
+    }
+  },
+  "sourceBoundary": "implementation source and format/normalization specification withheld; public caller ABI declarations and license allowed",
+  "refusalModel": "unknown branch/opcode/dependency, memory/budget errors, malformed declaration or unsupported state refuse"
+}

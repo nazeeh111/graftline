@@ -1,0 +1,25 @@
+{
+  "arguments": [
+    {
+      "kind": "input"
+    },
+    {
+      "kind": "input-length"
+    },
+    {
+      "kind": "pointer-cell",
+      "name": "result"
+    },
+    {
+      "kind": "scalar",
+      "name": "options",
+      "minimum": 0,
+      "maximum": 32767
+    }
+  ],
+  "return": {
+    "kind": "allocated-buffer",
+    "signed": true,
+    "pointerCell": "result"
+  }
+}

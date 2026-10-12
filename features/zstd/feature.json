@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "name": "zstd",
+  "entrySymbol": "ZSTD_decompress",
+  "entry": 4447975044,
+  "capsuleSha256": "390a3781472ccd342b3a4bf0e93c56f9d1e222f98344188df80b2a23b97df239",
+  "target": {
+    "original": "/Library/Frameworks/Python.framework/Versions/3.14/lib/libzstd.1.5.7.dylib",
+    "originalSha256": "9869966bf2a7375e739e6102e677998db7ea4a9096d31129b98120439dcfa5d0",
+    "thinSha256": "d6bf3d7bc948fb8d9dc990634cfb6c045e4200ac072ef641f86c6d1ce1d0b115",
+    "version": 10507,
+    "bytes": 2032016
+  },
+  "abi": {
+    "arguments": [
+      {
+        "kind": "output",
+        "name": "output"
+      },
+      {
+        "kind": "scalar",
+        "name": "capacity",
+        "minimum": 0,
+        "maximum": 2097152
+      },
+      {
+        "kind": "input"
+      },
+      {
+        "kind": "input-length"
+      }
+    ],
+    "return": {
+      "kind": "buffer",
+      "signed": false,
+      "address": "output",
+      "capacity": "capacity"
+    }
+  },
+  "sourceBoundary": "implementation source and format/normalization specification withheld; public caller ABI declarations and license allowed",
+  "refusalModel": "unknown branch/opcode/dependency, memory/budget errors, malformed declaration or unsupported state refuse"
+}

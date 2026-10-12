@@ -1,0 +1,178 @@
+{
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+    "-I",
+    "-S",
+    "outputs/graftline/run.py",
+    "verify",
+    "outputs/graftline/features/utf8proc",
+    "outputs/graftline/features/utf8proc/cases.json"
+  ],
+  "exitCode": 0,
+  "casesSha256": "e268350d0f25a04b8359b92db7f01001186b5f64dd77eee34e2c8e2eb7a64049",
+  "rows": [
+    {
+      "returnValue": 0,
+      "instructions": 187,
+      "pcodeOps": 679,
+      "externalCalls": {
+        "malloc": 1,
+        "realloc": 1
+      },
+      "label": "empty",
+      "matched": true
+    },
+    {
+      "returnValue": 3559,
+      "instructions": 306943,
+      "pcodeOps": 1439923,
+      "externalCalls": {
+        "malloc": 1,
+        "realloc": 1
+      },
+      "label": "random-codepoints",
+      "matched": true
+    },
+    {
+      "returnValue": 1020,
+      "instructions": 188369,
+      "pcodeOps": 858210,
+      "externalCalls": {
+        "malloc": 1,
+        "realloc": 1
+      },
+      "label": "expansions",
+      "matched": true
+    },
+    {
+      "returnValue": 720,
+      "instructions": 169140,
+      "pcodeOps": 797631,
+      "externalCalls": {
+        "malloc": 1,
+        "realloc": 1
+      },
+      "label": "hangul",
+      "matched": true
+    },
+    {
+      "returnValue": 296,
+      "instructions": 56809,
+      "pcodeOps": 269852,
+      "externalCalls": {
+        "malloc": 1,
+        "realloc": 1
+      },
+      "label": "ordered-marks",
+      "matched": true
+    },
+    {
+      "returnValue": 320,
+      "instructions": 28213,
+      "pcodeOps": 128851,
+      "externalCalls": {
+        "malloc": 1,
+        "realloc": 1
+      },
+      "label": "emoji-boundaries",
+      "matched": true
+    },
+    {
+      "returnValue": 9,
+      "instructions": 2077,
+      "pcodeOps": 9112,
+      "externalCalls": {
+        "malloc": 1,
+        "realloc": 1
+      },
+      "label": "line-endings",
+      "matched": true
+    },
+    {
+      "returnValue": -4,
+      "instructions": 164,
+      "pcodeOps": 700,
+      "externalCalls": {},
+      "label": "unassigned",
+      "matched": true
+    },
+    {
+      "returnValue": 4420,
+      "instructions": 1396223,
+      "pcodeOps": 6181220,
+      "externalCalls": {
+        "malloc": 1,
+        "realloc": 1
+      },
+      "label": "long-casefold",
+      "matched": true
+    },
+    {
+      "returnValue": 4,
+      "instructions": 995,
+      "pcodeOps": 4145,
+      "externalCalls": {
+        "malloc": 1,
+        "realloc": 1
+      },
+      "label": "embedded-nuls",
+      "matched": true
+    },
+    {
+      "returnValue": 4,
+      "instructions": 1501,
+      "pcodeOps": 6508,
+      "externalCalls": {
+        "malloc": 1,
+        "realloc": 1
+      },
+      "label": "strip-controls",
+      "matched": true
+    },
+    {
+      "returnValue": -3,
+      "instructions": 91,
+      "pcodeOps": 320,
+      "externalCalls": {},
+      "label": "overlong",
+      "matched": true
+    },
+    {
+      "returnValue": -3,
+      "instructions": 109,
+      "pcodeOps": 417,
+      "externalCalls": {},
+      "label": "surrogate-utf8",
+      "matched": true
+    },
+    {
+      "returnValue": -3,
+      "instructions": 97,
+      "pcodeOps": 358,
+      "externalCalls": {},
+      "label": "truncated-utf8",
+      "matched": true
+    },
+    {
+      "returnValue": -3,
+      "instructions": 113,
+      "pcodeOps": 433,
+      "externalCalls": {},
+      "label": "outside-unicode",
+      "matched": true
+    },
+    {
+      "returnValue": -5,
+      "instructions": 52,
+      "pcodeOps": 200,
+      "externalCalls": {},
+      "label": "incompatible-options",
+      "matched": true
+    }
+  ],
+  "summary": {
+    "completed": 16,
+    "matched": 16,
+    "refused": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "graftline/runtime.py": {
+    "sha256": "421afbc1f9ad9a04774ff132a8721a04d46e60f0ddc7f572c1b8f12e81d1eebe",
+    "bytes": 12228
+  },
+  "graftline/api.py": {
+    "sha256": "94785e6003916ff43128da417e611584f6ec91fe6dbaf672b00baff1017bb269",
+    "bytes": 3817
+  },
+  "graftline/__main__.py": {
+    "sha256": "10059f754718fef7bc39268226055ba54cc61ab51cb824ee88a40c05f7d1ef12",
+    "bytes": 3017
+  },
+  "run.py": {
+    "sha256": "9a95aacae3f1469e166e49e8db675679feff6385a0ff40789f17a3c120d52e0b",
+    "bytes": 220
+  },
+  "tools/snapshot.py": {
+    "sha256": "dffeab62d722d0fa43211c0a77516053b7dba17c757712dab293e94a43b3e71b",
+    "bytes": 3050
+  },
+  "tools/close.py": {
+    "sha256": "f348ee5d6a7af076535bb36273363a25ff30938c9e62a5a118b17e16ec1bc33b",
+    "bytes": 5719
+  },
+  "features/utf8proc/feature.json": {
+    "sha256": "6a5bca4e1b6cb30381c82ce4b924c2280b224515c36efed13a05aaebd2e0e7c4",
+    "bytes": 1243
+  },
+  "features/utf8proc/capsule.json": {
+    "sha256": "0c6387f147150ae1f06ed73050628566693872916a6ff39c6b63736ca58f39e4",
+    "bytes": 786040
+  },
+  "features/zstd/feature.json": {
+    "sha256": "e0030f3c9e144f8f49260b64a6c4e8dc66fec56166f92179a6af36d5dbec514c",
+    "bytes": 1228
+  },
+  "features/zstd/capsule.json": {
+    "sha256": "390a3781472ccd342b3a4bf0e93c56f9d1e222f98344188df80b2a23b97df239",
+    "bytes": 15572453
+  }
+}

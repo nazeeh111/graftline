@@ -1,0 +1,21 @@
+name: Closed feature witnesses
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+      - name: Check declared memory and interface refusals
+        run: python -I -S tests/test_boundaries.py
+      - name: Compare retained decoder witnesses
+        run: python -I -S run.py verify features/zstd features/zstd/cases.json
+      - name: Compare retained Unicode witnesses
+        run: python -I -S run.py verify features/utf8proc features/utf8proc/cases.json

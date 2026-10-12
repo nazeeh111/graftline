@@ -1,0 +1,26 @@
+{
+  "arguments": [
+    {
+      "kind": "output",
+      "name": "output"
+    },
+    {
+      "kind": "scalar",
+      "name": "capacity",
+      "minimum": 0,
+      "maximum": 2097152
+    },
+    {
+      "kind": "input"
+    },
+    {
+      "kind": "input-length"
+    }
+  ],
+  "return": {
+    "kind": "buffer",
+    "signed": false,
+    "address": "output",
+    "capacity": "capacity"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "targetSha256": "9869966bf2a7375e739e6102e677998db7ea4a9096d31129b98120439dcfa5d0",
+  "entry": "ZSTD_decompress",
+  "genericTools": [
+    "snapshot.py",
+    "close.py",
+    "bind.py"
+  ],
+  "seedEntryDeclared": "ZSTD_decompress",
+  "rebase": "IR freshly lifted at new load addresses; text data copied from new loaded image",
+  "reproducedCapsuleSha256": "c7e97c6c465adf5d5dfa3b71db8059f945f144f2c9af26dcf66ab6f86663aeb3",
+  "functions": 404,
+  "instructionAddresses": 67191,
+  "outputSha256": "9a644990a6ac1dc43c41bee4423e59744aebb81adbe55fe9b757e29999a40d99",
+  "outputBytes": 139363,
+  "nativeOracleNotUsedByClosedCommand": true
+}
