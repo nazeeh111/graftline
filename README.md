@@ -40,7 +40,7 @@ complete Unicode compatibility by assertion.
 the argument and return convention. Supported declarations are one input byte
 buffer, input length, bounded unsigned scalars, and one owned output buffer or
 allocated-output pointer cell. Arguments occupy x0–x7 and the return uses x0.
-Exactly one input and one input length are required. Unknown ABI/argument/return fields, signed scalar declarations, unsupported widths and duplicate kinds refuse. Scalars use unsigned 64-bit register values; returns use unsigned 64-bit buffer lengths/errors or signed 64-bit allocated lengths/errors. Optional explicit width markers must be 64. Signatures are supplied by the caller, not inferred from machine code.
+Exactly one input and one input length are required. Unknown ABI/argument/return fields, signed scalar declarations, unsupported widths, repeated input/input-length declarations and duplicate argument names refuse. Scalars use unsigned 64-bit register values; returns use unsigned 64-bit buffer lengths/errors or signed 64-bit allocated lengths/errors. Optional explicit width markers must be 64. Signatures are supplied by the caller, not inferred from machine code.
 
 ```python
 from graftline import Feature
@@ -56,7 +56,7 @@ loading and lifting imports; it never falls back to the original library.
 
 ## Evidence and limits
 
-| Frozen feature | Actual native source | Retained original code | Current comparisons |
+| Frozen feature | Actual native source | Retained original code | Retained comparisons |
 | --- | --- | --- | --- |
 | Zstandard decode | Python-distributed libzstd 1.5.7 ARM64 slice | 404/1,438 text symbol bodies; 268,428 text bytes (14.55%), plus 336 import bytes | 47/47 native return/output comparisons |
 | Unicode mapping | MATLAB-distributed utf8proc API 2.7.0 ARM64 library | 9/31 text symbol bodies; 4,248 text bytes (69.19%), plus 36 import bytes | 16/16 cases generated after the first Unicode runtime/extractor freeze |
