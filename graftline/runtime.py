@@ -1,4 +1,4 @@
-import base64, json, struct, time
+import base64, struct, time
 
 # Fixed-width unpack/pack operates directly on the shared byte buffers. It
 # preserves overlapping register/temporary aliases without allocating a slice
@@ -49,7 +49,6 @@ class VM:
     def __init__(self, capsule):
         self.capsule = capsule
         if 'ops' in capsule:
-            self.context = None
             self.names = capsule['registers']
         else:
             raise RuntimeError('This portable runtime requires frozen IR; native lifting is unavailable')
@@ -168,14 +167,7 @@ class VM:
             self.external(self.capsule['externals'][self.pc])
             return
         if self.pc not in self.ops:
-            if self.context is None:
-                raise RuntimeError(f'Undiscovered native branch: {self.pc:x}')
-            raw = self.mem.read(self.pc, 4, trace=False)
-            translated = self.context.translate(raw, self.pc, max_instructions=1)
-            for op in translated.ops:
-                if op.opcode.name == 'CALLOTHER':
-                    self.userops[op.inputs[0].offset] = op.inputs[0].getUserDefinedOpName()
-            self.ops[self.pc] = [(op.opcode.name, node(op.output), [node(i) for i in op.inputs]) for op in translated.ops if op.opcode.name != 'IMARK']
+            raise RuntimeError(f'Undiscovered native branch: {self.pc:x}')
         ops = self.ops[self.pc]
         self.stats['executed_addresses'].add(self.pc)
         self.stats['instructions'] += 1
