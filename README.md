@@ -66,15 +66,7 @@ withheld. Public ABI declarations and copyright notices were allowed. Native
 libraries were loaded only during explicit extraction and separate oracle
 generation, which creates comparison cases. They are absent from this repository.
 
-The Zstandard corpus contains the original eleven and 36 independently
-generated reviewer cases. Review exposed four checksum paths missing an import
-trampoline, then guided refinement; this corpus is now regression evidence.
-The Unicode discovery corpus first refused `realloc`; the bounded allocation
-model was added before generating sixteen new cases. Later manifest-validation
-changes did not change the successful transformation semantics. Retained case
-bytes, native expectations, results, provenance and freeze identities live in
-each feature directory. Results are finite observations, not complete correctness
-or security claims.
+Retained case bytes, native expectations, results and provenance are in each feature directory. These finite comparisons do not establish complete correctness or security.
 
 Each call allows at most 2 MiB input/output, a 16 MiB heap arena, a 4 MiB stack,
 2,000,000 interpreted instruction steps and 15 seconds. Unknown code, operations,
@@ -106,20 +98,7 @@ identity/ABI validation, unknown paths/dependencies, verifier status and output
 preservation, overlapping register values and direct/indirect control flow.
 The included GitHub workflow runs these standard-library commands with a
 five-minute job bound. See the [latest hosted CI status](https://github.com/nazeeh111/graftline/actions/workflows/verify.yml).
-The first hosted run refused the longest Unicode witness at the 15-second
-execution limit. The runtime update removes repeated buffer conversions and
-operand classification; the limits, capsules and witnesses remain unchanged.
 
 Project runtime/tools are MIT-licensed. Extracted Zstandard code/data remains
 BSD-licensed; utf8proc code and Unicode data retain their included notices.
 See [NOTICE.md](NOTICE.md). No upstream endorsement or name availability is claimed.
-
-## Corrected local freeze
-
-Independent review of the first local freeze found that allocation bookkeeping
-did not protect mapped heap bytes and ABI validation accepted ignored width/sign
-fields or repeated inputs. Both were corrected before delivery: memory access
-now enforces live object extents and declarations accept only the supported
-structure. Frozen-v1 source/archive and review counterexamples remain preserved
-in task-local evidence. The two retained native corpora pass with the corrected
-model; they are regression observations, not a new blind discovery count.
