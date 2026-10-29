@@ -101,4 +101,4 @@ five-minute job bound. See the [latest hosted CI status](https://github.com/naze
 
 Project runtime/tools are MIT-licensed. Extracted Zstandard code/data remains
 BSD-licensed; utf8proc code and Unicode data retain their included notices.
-See [NOTICE.md](NOTICE.md). No upstream endorsement or name availability is claimed.
+See [LICENSE](LICENSE). No upstream endorsement or name availability is claimed.
