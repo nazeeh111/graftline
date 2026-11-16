@@ -8,7 +8,8 @@ class Refusal(RuntimeError):
 class Feature:
     def __init__(self, directory):
         self.directory = pathlib.Path(directory)
-        self.manifest = json.loads((self.directory/'feature.json').read_text())
+        self.manifest_bytes = (self.directory/'feature.json').read_bytes()
+        self.manifest = json.loads(self.manifest_bytes)
         if self.manifest.get('schema') != 1:
             raise Refusal('Unsupported feature manifest schema')
         try:
@@ -65,6 +66,7 @@ class Feature:
         except (KeyError,TypeError) as e:
             raise Refusal('Malformed caller-declared ABI') from e
         data = (self.directory/'capsule.json').read_bytes()
+        self.capsule_bytes = data
         if hashlib.sha256(data).hexdigest() != self.manifest['capsuleSha256']:
             raise Refusal('Closed capsule identity mismatch')
         self.capsule = json.loads(data)

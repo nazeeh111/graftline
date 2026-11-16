@@ -27,12 +27,25 @@ Normalize compatibility characters and fold case:
 python3 -I -S run.py run features/utf8proc features/utf8proc/example.txt normalized.txt --param options=1070
 ```
 
-The supplied `Straße ﬁ Ａ Café` becomes `strasse fi a café`. Option value 1070
+Inspect the new output with `cat normalized.txt`. The supplied `Straße ﬁ Ａ Café` becomes `strasse fi a café`. Choose a new output path for another run; existing files are refused. Option value 1070
 combines the native library's stable, compatibility, composition, ignore and
 case-fold flags. Options are explicit integers, not inferred user intent.
 The frozen transform is **utf8proc API 2.7.0 / Unicode 14.0.0**, even though the
 installed library basename was `libutf8proc.2.5.0.dylib`. It is not current or
 complete Unicode compatibility by assertion.
+
+## Run, verify, extract
+
+The shipped `features/zstd` and `features/utf8proc` directories contain frozen
+capsules and retained cases. `run.py run` transforms supplied bytes without
+loading the original library; `run.py verify` compares the interpreter's results
+with those cases. The final JSON line counts completed, matched and refused cases;
+exit 0 requires a nonempty set where every case matches.
+
+To capture a new feature, follow [EXTRACTION.md](EXTRACTION.md). Extraction is a
+separate operation that loads an authorized, symbol-bearing ARM64 Mach-O dynamic
+library and needs a declared ABI and fresh evidence. It is not a sandbox or an
+arbitrary-binary extractor. It does not run when using the shipped capsules.
 
 ## Calling another extracted feature
 
@@ -92,7 +105,7 @@ python3 -I -S run.py verify features/utf8proc features/utf8proc/cases.json
 python3 -I -S tests/test_boundaries.py
 ```
 
-The verifier exits nonzero for a mismatch, refusal or empty corpus. Thirteen focused
+The verifier exits nonzero for a mismatch, refusal or empty corpus. Receipt messages appear on stderr after successful publication or comparison; the existing case and summary JSON remain on stdout. Thirteen focused
 boundary tests cover live heap bounds across guest/helper access, zero extents, ownership/reallocation, checked memory, repeated state,
 identity/ABI validation, unknown paths/dependencies, verifier status and output
 preservation, overlapping register values and direct/indirect control flow.
@@ -102,3 +115,19 @@ five-minute job bound. See the [latest hosted CI status](https://github.com/naze
 Project runtime/tools are MIT-licensed. Extracted Zstandard code/data remains
 BSD-licensed; utf8proc code and Unicode data retain their included notices.
 See [LICENSE](LICENSE). No upstream endorsement or name availability is claimed.
+
+### Current validation receipts
+
+Save a new receipt, then rerun and compare it:
+
+```sh
+python3 -I -S run.py verify features/utf8proc features/utf8proc/cases.json --receipt unicode-receipt.json
+python3 -I -S run.py verify features/utf8proc features/utf8proc/cases.json --check-receipt unicode-receipt.json
+```
+
+
+`python3 -I -S run.py verify FEATURE CASES --receipt NEW.json` runs the same verifier and publishes a fresh receipt without overwriting an existing file. It records current engine source, exact feature/capsule/case and license hashes, Python identity, specimen terms, per-case return/output hashes and observed refusals. It records a failed or refused case as such and retains the usual nonzero exit. An interrupted write does not publish a partial receipt; retry with a new or unoccupied path.
+
+`python3 -I -S run.py verify FEATURE CASES --check-receipt NEW.json` reruns those cases and compares the fresh result and inputs with the saved receipt. It does not execute commands from the receipt. The engine and files must remain stable during the run. These source hashes identify files observed around verification; they are not a signature, a guarantee against malicious concurrent replacement, proof of complete refusal coverage, or proof of native parity. `FREEZE.json`, `manifest.json` and retained results are historical records, not a manifest of the current checkout; this receipt identifies the current observed source and inputs without rewriting those records.
+
+A receipt cannot be written as a `LICENSE`-prefixed file inside the specimen directory, because that would change the license set the receipt identifies. Receipt comparison preserves JSON value types, including the distinction between booleans and numbers.
