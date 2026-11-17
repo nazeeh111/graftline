@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="1440" viewBox="0 0 420 1440" role="img" aria-labelledby="title desc">
+<title id="title">Graftline: a native feature without its original library</title>
+<desc id="desc">Actual isolated execution expands a 336-byte Zstandard input to 139,363 matching bytes using an explicit four-register ABI and generic interpreter. A second frozen Unicode feature produces 18 bytes through the same interpreter. Virtual memory regions are schematic, not drawn to byte scale.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#242228}.muted{fill:#55545e}.accent{fill:#733f63}.mono{font-family:"Courier New",Courier,monospace}</style>
+<rect width="420" height="1440" fill="#f2f1f3"/>
+<text x="28" y="48" font-size="30" font-weight="700" class="">graftline</text>
+<text x="28" y="105" font-size="36" font-weight="700" class="">Keep the feature.</text>
+<text x="28" y="148" font-size="36" font-weight="700" class="">Leave the library.</text>
+<text x="28" y="190" font-size="18" font-weight="400" class="muted">Actual closed execution; declared ABI.</text>
+<text x="28" y="245" font-size="26" font-weight="700" class="accent">Zstandard 1.5.7 decoder</text>
+<text x="28" y="282" font-size="19" font-weight="700" class="">336 input bytes → 139,363 output bytes</text>
+<text x="28" y="333" font-size="18" font-weight="400" class="mono">x0  output = 0x40000000</text>
+<text x="28" y="368" font-size="18" font-weight="400" class="mono">x1  capacity = 150000</text>
+<text x="28" y="403" font-size="18" font-weight="400" class="mono">x2  input = 0x30000000</text>
+<text x="28" y="438" font-size="18" font-weight="400" class="mono">x3  input length = 336</text>
+<text x="28" y="505" font-size="22" font-weight="700" class="accent">Return x0 = 139363</text>
+<text x="28" y="547" font-size="16" font-weight="400" class="muted">Output SHA256</text>
+<text x="28" y="576" font-size="15" font-weight="400" class="mono">9a644990a6ac1dc43c41bee4423e5974</text>
+<text x="28" y="601" font-size="15" font-weight="400" class="mono">4aebb81adbe55fe9b757e29999a40d99</text>
+<text x="28" y="665" font-size="26" font-weight="700" class="">Owned virtual regions</text>
+<text x="28" y="716" font-size="19" font-weight="400" class="mono">0x10000000</text>
+<text x="28" y="739" font-size="17" font-weight="400" class="muted">4 MiB stack</text>
+<text x="28" y="776" font-size="19" font-weight="400" class="mono">0x20000000</text>
+<text x="28" y="799" font-size="17" font-weight="400" class="muted">16 MiB heap arena</text>
+<text x="28" y="836" font-size="19" font-weight="400" class="mono">0x30000000</text>
+<text x="28" y="859" font-size="17" font-weight="400" class="muted">2 MiB input region</text>
+<text x="28" y="896" font-size="19" font-weight="400" class="mono">0x40000000</text>
+<text x="28" y="919" font-size="17" font-weight="400" class="muted">2 MiB output region</text>
+<text x="28" y="964" font-size="15" font-weight="400" class="muted">Region map is schematic, not to scale.</text>
+<text x="28" y="1035" font-size="25" font-weight="700" class="">Same interpreter.</text>
+<text x="28" y="1069" font-size="25" font-weight="700" class="">Another feature.</text>
+<text x="28" y="1108" font-size="18" font-weight="700" class="accent">utf8proc API 2.7.0 / Unicode 14.0.0</text>
+<text x="28" y="1144" font-size="16" font-weight="400" class="mono">options 1070; 22 → 18 bytes</text>
+<text x="28" y="1188" font-size="27" font-weight="400" class="mono">strasse fi a café</text>
+<text x="28" y="1252" font-size="16" font-weight="400" class="muted">Retained cases: 47 Zstd / 16 Unicode.</text>
+<text x="28" y="1293" font-size="16" font-weight="400" class="muted">Finite comparisons, not complete correctness.</text>
+<text x="28" y="1340" font-size="16" font-weight="400" class="muted">Frozen code and tables; original libraries absent.</text>
+<text x="28" y="1380" font-size="16" font-weight="400" class="muted">Original licenses and modified-export notice kept.</text>
+</svg>

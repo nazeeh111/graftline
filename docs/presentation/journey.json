@@ -1,0 +1,143 @@
+{
+  "source": "13261db3cf8778157398295f221aac93f975531a",
+  "python": "3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "nativeLoadingAuditInstalled": true,
+  "originalNativeLibrariesAccessed": false,
+  "zstd": {
+    "feature": "zstd",
+    "entrySymbol": "ZSTD_decompress",
+    "entry": 4447975044,
+    "capsuleSHA256": "390a3781472ccd342b3a4bf0e93c56f9d1e222f98344188df80b2a23b97df239",
+    "abi": {
+      "arguments": [
+        {
+          "kind": "output",
+          "name": "output"
+        },
+        {
+          "kind": "scalar",
+          "name": "capacity",
+          "minimum": 0,
+          "maximum": 2097152
+        },
+        {
+          "kind": "input"
+        },
+        {
+          "kind": "input-length"
+        }
+      ],
+      "return": {
+        "kind": "buffer",
+        "signed": false,
+        "address": "output",
+        "capacity": "capacity"
+      }
+    },
+    "parameters": {
+      "capacity": 150000
+    },
+    "inputBytes": 336,
+    "inputSHA256": "5f207d630ab0bc4505d293a0f3b6bc20a5fc09338b1b4b039670258730601e8a",
+    "outputBytes": 139363,
+    "outputSHA256": "9a644990a6ac1dc43c41bee4423e59744aebb81adbe55fe9b757e29999a40d99",
+    "returnValue": 139363,
+    "instructions": 249970,
+    "pcodeOps": 771822,
+    "modeledExternalCalls": {
+      "malloc": 1,
+      "memset": 1,
+      "memmove": 4,
+      "free": 1
+    }
+  },
+  "unicode": {
+    "feature": "utf8proc",
+    "entrySymbol": "utf8proc_map",
+    "entry": 4433802964,
+    "capsuleSHA256": "0c6387f147150ae1f06ed73050628566693872916a6ff39c6b63736ca58f39e4",
+    "abi": {
+      "arguments": [
+        {
+          "kind": "input"
+        },
+        {
+          "kind": "input-length"
+        },
+        {
+          "kind": "pointer-cell",
+          "name": "result"
+        },
+        {
+          "kind": "scalar",
+          "name": "options",
+          "minimum": 0,
+          "maximum": 32767
+        }
+      ],
+      "return": {
+        "kind": "allocated-buffer",
+        "signed": true,
+        "pointerCell": "result"
+      }
+    },
+    "parameters": {
+      "options": 1070
+    },
+    "inputBytes": 22,
+    "inputSHA256": "ae077d42e5a797f2827c666c32dee419cc13dad6e436673bc7ed8ebce2e6ecec",
+    "outputBytes": 18,
+    "outputSHA256": "89a5f24cedcd8cfdb1583926896bd36c22c0329839a524211fcba9332078a335",
+    "returnValue": 18,
+    "instructions": 6228,
+    "pcodeOps": 27471,
+    "modeledExternalCalls": {
+      "malloc": 1,
+      "realloc": 1
+    }
+  },
+  "unicodeInputUTF8": "Straße ﬁ Ａ Café",
+  "unicodeOutputUTF8": "strasse fi a café",
+  "repeatedFreshCallExact": true,
+  "negativeAPI": [
+    {
+      "case": "boolean-capacity",
+      "type": "Refusal",
+      "message": "Scalar argument outside declared bound: capacity"
+    },
+    {
+      "case": "missing-scalar",
+      "type": "Refusal",
+      "message": "Parameters must exactly match declared scalar arguments"
+    },
+    {
+      "case": "undeclared-scalar",
+      "type": "Refusal",
+      "message": "Parameters must exactly match declared scalar arguments"
+    },
+    {
+      "case": "oversized-input",
+      "type": "Refusal",
+      "message": "Source must be bytes within the 2 MiB input bound"
+    },
+    {
+      "case": "unsupported-32-bit-scalar-ABI",
+      "type": "Refusal",
+      "message": "Only unsigned 64-bit scalar arguments are supported"
+    }
+  ],
+  "negativeCLI": [
+    {
+      "case": "existing-output",
+      "exit": 1,
+      "stderr": "Refused: Output path already exists\n"
+    },
+    {
+      "case": "invalid-input",
+      "exit": 1,
+      "stderr": "Refused: Native feature returned error 18446744073709551606\n"
+    }
+  ],
+  "sentinelPreserved": true,
+  "failedOutputAbsent": true
+}

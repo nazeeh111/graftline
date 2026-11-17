@@ -1,0 +1,688 @@
+{
+  "engine": {
+    "engine_source_sha256": {
+      "__init__.py": "68f1d8223a1841e51fafe24ab0d0cce519a04ef4553410bdbe926074439a8fcf",
+      "__main__.py": "d85bbae8ec7f1bda4ba3da9c6bb7268e227646a2229c35ac9669cee4ea98f7af",
+      "api.py": "c4855f6936ab70d580527c684d40cae8891d8a9766f7696f8e54aef982dbf4e0",
+      "receipt.py": "6aa9955c9d4c9aa33ec47b85f4f7c9afe336211b0d15b0ca1177029f01c9230a",
+      "runtime.py": "ccd2364d25a2374dfa0dc08cd8575e23dcbb53bb952b420bb779fdef03bd5c01"
+    },
+    "license_sha256": {
+      "LICENSE-Zstandard.txt": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8"
+    },
+    "python_implementation": "CPython",
+    "python_version": "3.14.7"
+  },
+  "inputs": {
+    "capsule_sha256": "390a3781472ccd342b3a4bf0e93c56f9d1e222f98344188df80b2a23b97df239",
+    "cases_sha256": "bbd06c5ededbf366e0fc3374ba057d8b2172742d292d45029ea5e9bc7848adf8",
+    "feature_sha256": "e0030f3c9e144f8f49260b64a6c4e8dc66fec56166f92179a6af36d5dbec514c"
+  },
+  "schema": "graftline-current-validation-v1",
+  "scope": "Observed local rerun against supplied case expectations; hashes are not authentication, native parity proof, or complete refusal coverage.",
+  "specimen": {
+    "name": "zstd",
+    "refusal_model": "unknown branch/opcode/dependency, memory/budget errors, malformed declaration or unsupported state refuse",
+    "source_boundary": "implementation source and format/normalization specification withheld; public caller ABI declarations and license allowed"
+  },
+  "validation": {
+    "cases": [
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 1,
+          "memset": 1
+        },
+        "instructions": 1600,
+        "label": "blind-single",
+        "matched": true,
+        "outputSha256": "782e02029374527bd2a5fe7b9545df6c2911078e337a62573970b178d93db481",
+        "pcodeOps": 4790,
+        "returnValue": 1
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 6896,
+        "label": "blind-unicode",
+        "matched": true,
+        "outputSha256": "8f87bb7ebeae592aeeb36148468c30424553263912a76304ee262fb640a5b24f",
+        "pcodeOps": 21025,
+        "returnValue": 1763
+      },
+      {
+        "externalCalls": {
+          "bzero": 2,
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 4
+        },
+        "instructions": 192422,
+        "label": "blind-alphabet-skew",
+        "matched": true,
+        "outputSha256": "5345080be0232750dc6d01bc746004e483bbd4c97c128be0d1dcfb84fc6fc569",
+        "pcodeOps": 574345,
+        "returnValue": 6311
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 20908,
+        "label": "blind-gradient",
+        "matched": true,
+        "outputSha256": "32837143ac2301d4ebda9a61d0b52aa6a28b5963f614e48a81a75656c6167dc5",
+        "pcodeOps": 64311,
+        "returnValue": 9781
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 1,
+          "memset": 1
+        },
+        "instructions": 1627,
+        "label": "blind-raw-random",
+        "matched": true,
+        "outputSha256": "dbddb6e1737ce6ec4b885553828e712038f981d6d7d81a03d9d4f2a4010159aa",
+        "pcodeOps": 4878,
+        "returnValue": 65537
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 4,
+          "memset": 1
+        },
+        "instructions": 249970,
+        "label": "blind-multiple-blocks",
+        "matched": true,
+        "outputSha256": "9a644990a6ac1dc43c41bee4423e59744aebb81adbe55fe9b757e29999a40d99",
+        "pcodeOps": 771822,
+        "returnValue": 139363
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 1,
+          "memset": 1
+        },
+        "instructions": 1600,
+        "label": "blind-raw-short",
+        "matched": true,
+        "outputSha256": "ca28cd35879742ce072f7b4708b08d2b5ebd8e894c8d092c72549160bd4c3a7b",
+        "pcodeOps": 4790,
+        "returnValue": 77
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 22774,
+        "label": "blind-sparse-zeroes",
+        "matched": true,
+        "outputSha256": "55e37b9c15fa66b27fa72f848f33c63e77cda57565b130fd872b9e82915a59e0",
+        "pcodeOps": 73971,
+        "returnValue": 5625
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1
+        },
+        "instructions": 961,
+        "label": "blind-malformed",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 2851,
+        "returnValue": 18446744073709551544
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1463,
+        "label": "blind-truncated",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 4377,
+        "returnValue": 18446744073709551544
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 1,
+          "memset": 1
+        },
+        "instructions": 3492,
+        "label": "blind-short-capacity",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 10425,
+        "returnValue": 18446744073709551546
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 4,
+          "memset": 1
+        },
+        "instructions": 279637,
+        "label": "repeat--5",
+        "matched": true,
+        "outputSha256": "113b3c9bf9648a6f0e1d8f1dd74ec6edff493d1a9e48efb1d38a6b8aa3e6c626",
+        "pcodeOps": 860581,
+        "returnValue": 156000
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 4,
+          "memset": 1
+        },
+        "instructions": 279581,
+        "label": "repeat-1",
+        "matched": true,
+        "outputSha256": "113b3c9bf9648a6f0e1d8f1dd74ec6edff493d1a9e48efb1d38a6b8aa3e6c626",
+        "pcodeOps": 860397,
+        "returnValue": 156000
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 3,
+          "memset": 1
+        },
+        "instructions": 235114,
+        "label": "repeat-capacity-minus-one",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 725888,
+        "returnValue": 18446744073709551546
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 233217,
+        "label": "repeat-truncated",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 720198,
+        "returnValue": 18446744073709551544
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 4,
+          "memset": 1
+        },
+        "instructions": 279610,
+        "label": "repeat-22",
+        "matched": true,
+        "outputSha256": "113b3c9bf9648a6f0e1d8f1dd74ec6edff493d1a9e48efb1d38a6b8aa3e6c626",
+        "pcodeOps": 860446,
+        "returnValue": 156000
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 1,
+          "memset": 1
+        },
+        "instructions": 1627,
+        "label": "skew--5",
+        "matched": true,
+        "outputSha256": "e262917488bf0af36f9820c600f9f9c0e91c11deef3a183f107e11975a403e17",
+        "pcodeOps": 4878,
+        "returnValue": 23000
+      },
+      {
+        "externalCalls": {
+          "bzero": 1,
+          "free": 1,
+          "malloc": 1,
+          "memmove": 1,
+          "memset": 4
+        },
+        "instructions": 712434,
+        "label": "skew-1",
+        "matched": true,
+        "outputSha256": "e262917488bf0af36f9820c600f9f9c0e91c11deef3a183f107e11975a403e17",
+        "pcodeOps": 2058419,
+        "returnValue": 23000
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1774,
+        "label": "skew-capacity-minus-one",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 5300,
+        "returnValue": 18446744073709551546
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1463,
+        "label": "skew-truncated",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 4377,
+        "returnValue": 18446744073709551544
+      },
+      {
+        "externalCalls": {
+          "bzero": 4,
+          "free": 1,
+          "malloc": 1,
+          "memmove": 1,
+          "memset": 4
+        },
+        "instructions": 814871,
+        "label": "skew-22",
+        "matched": true,
+        "outputSha256": "e262917488bf0af36f9820c600f9f9c0e91c11deef3a183f107e11975a403e17",
+        "pcodeOps": 2382445,
+        "returnValue": 23000
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 1,
+          "memset": 1
+        },
+        "instructions": 1627,
+        "label": "random--5",
+        "matched": true,
+        "outputSha256": "461658411b0f1390c09ce1da00237557fbbdb417317cb6f142fbb09e19bbeaab",
+        "pcodeOps": 4878,
+        "returnValue": 32769
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 1,
+          "memset": 1
+        },
+        "instructions": 1627,
+        "label": "random-1",
+        "matched": true,
+        "outputSha256": "461658411b0f1390c09ce1da00237557fbbdb417317cb6f142fbb09e19bbeaab",
+        "pcodeOps": 4878,
+        "returnValue": 32769
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1523,
+        "label": "random-capacity-minus-one",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 4543,
+        "returnValue": 18446744073709551546
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1463,
+        "label": "random-truncated",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 4377,
+        "returnValue": 18446744073709551544
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 1,
+          "memset": 1
+        },
+        "instructions": 1627,
+        "label": "random-22",
+        "matched": true,
+        "outputSha256": "461658411b0f1390c09ce1da00237557fbbdb417317cb6f142fbb09e19bbeaab",
+        "pcodeOps": 4878,
+        "returnValue": 32769
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 2
+        },
+        "instructions": 495625,
+        "label": "zero--5",
+        "matched": true,
+        "outputSha256": "c039de4e509e3fbc3dc379738c54794e57fade70b95f412331bce50dbc6e2af9",
+        "pcodeOps": 1618143,
+        "returnValue": 131100
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 2
+        },
+        "instructions": 495599,
+        "label": "zero-1",
+        "matched": true,
+        "outputSha256": "c039de4e509e3fbc3dc379738c54794e57fade70b95f412331bce50dbc6e2af9",
+        "pcodeOps": 1618057,
+        "returnValue": 131100
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 495509,
+        "label": "zero-capacity-minus-one",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 1617767,
+        "returnValue": 18446744073709551546
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 495362,
+        "label": "zero-truncated",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 1617316,
+        "returnValue": 18446744073709551544
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 2
+        },
+        "instructions": 495593,
+        "label": "zero-22",
+        "matched": true,
+        "outputSha256": "c039de4e509e3fbc3dc379738c54794e57fade70b95f412331bce50dbc6e2af9",
+        "pcodeOps": 1618043,
+        "returnValue": 131100
+      },
+      {
+        "externalCalls": {
+          "__memcpy_chk": 1,
+          "__memset_chk": 1,
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 458783,
+        "label": "checksum",
+        "matched": true,
+        "outputSha256": "72f9e594b5903e0d5dba52e54a74e6934161904f70afc89c9372769322a9b62e",
+        "pcodeOps": 1251822,
+        "returnValue": 53200
+      },
+      {
+        "externalCalls": {
+          "__memcpy_chk": 1,
+          "__memset_chk": 1,
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 458718,
+        "label": "checksum-bad-checksum",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 1251604,
+        "returnValue": 18446744073709551594
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 97386,
+        "label": "no-size",
+        "matched": true,
+        "outputSha256": "72f9e594b5903e0d5dba52e54a74e6934161904f70afc89c9372769322a9b62e",
+        "pcodeOps": 294106,
+        "returnValue": 53200
+      },
+      {
+        "externalCalls": {
+          "__memcpy_chk": 1,
+          "__memset_chk": 1,
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 458737,
+        "label": "checksum-no-size",
+        "matched": true,
+        "outputSha256": "72f9e594b5903e0d5dba52e54a74e6934161904f70afc89c9372769322a9b62e",
+        "pcodeOps": 1251684,
+        "returnValue": 53200
+      },
+      {
+        "externalCalls": {
+          "__memcpy_chk": 1,
+          "__memset_chk": 1,
+          "free": 1,
+          "malloc": 1,
+          "memmove": 2,
+          "memset": 1
+        },
+        "instructions": 458672,
+        "label": "checksum-no-size-bad-checksum",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 1251466,
+        "returnValue": 18446744073709551594
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 4,
+          "memset": 2
+        },
+        "instructions": 21077,
+        "label": "concatenated",
+        "matched": true,
+        "outputSha256": "b0d3aae738e94a4296f95b536a559fa99ba238674f4eb2cc9401f0d9104a137c",
+        "pcodeOps": 68114,
+        "returnValue": 3810
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1
+        },
+        "instructions": 666,
+        "label": "skip-only",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 1977,
+        "returnValue": 0
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memmove": 4,
+          "memset": 2
+        },
+        "instructions": 21746,
+        "label": "skip-concatenated",
+        "matched": true,
+        "outputSha256": "b0d3aae738e94a4296f95b536a559fa99ba238674f4eb2cc9401f0d9104a137c",
+        "pcodeOps": 70169,
+        "returnValue": 3810
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1
+        },
+        "instructions": 443,
+        "label": "random-invalid-0",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 1292,
+        "returnValue": 0
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1
+        },
+        "instructions": 848,
+        "label": "random-invalid-1",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 2478,
+        "returnValue": 18446744073709551544
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1140,
+        "label": "random-invalid-2",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 3366,
+        "returnValue": 18446744073709551606
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1146,
+        "label": "random-invalid-3",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 3385,
+        "returnValue": 18446744073709551606
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1146,
+        "label": "random-invalid-4",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 3385,
+        "returnValue": 18446744073709551606
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1146,
+        "label": "random-invalid-5",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 3385,
+        "returnValue": 18446744073709551606
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1146,
+        "label": "random-invalid-6",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 3385,
+        "returnValue": 18446744073709551606
+      },
+      {
+        "externalCalls": {
+          "free": 1,
+          "malloc": 1,
+          "memset": 1
+        },
+        "instructions": 1146,
+        "label": "random-invalid-7",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 3385,
+        "returnValue": 18446744073709551606
+      }
+    ],
+    "rerun": true,
+    "summary": {
+      "completed": 47,
+      "matched": 47,
+      "refused": 0
+    }
+  }
+}

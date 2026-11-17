@@ -1,0 +1,212 @@
+{
+  "engine": {
+    "engine_source_sha256": {
+      "__init__.py": "68f1d8223a1841e51fafe24ab0d0cce519a04ef4553410bdbe926074439a8fcf",
+      "__main__.py": "d85bbae8ec7f1bda4ba3da9c6bb7268e227646a2229c35ac9669cee4ea98f7af",
+      "api.py": "c4855f6936ab70d580527c684d40cae8891d8a9766f7696f8e54aef982dbf4e0",
+      "receipt.py": "6aa9955c9d4c9aa33ec47b85f4f7c9afe336211b0d15b0ca1177029f01c9230a",
+      "runtime.py": "ccd2364d25a2374dfa0dc08cd8575e23dcbb53bb952b420bb779fdef03bd5c01"
+    },
+    "license_sha256": {
+      "LICENSE.md": "3b510150d34f248a221bb88e1d811238d6c6c18b51231822c42974c39bb07256"
+    },
+    "python_implementation": "CPython",
+    "python_version": "3.14.7"
+  },
+  "inputs": {
+    "capsule_sha256": "0c6387f147150ae1f06ed73050628566693872916a6ff39c6b63736ca58f39e4",
+    "cases_sha256": "e268350d0f25a04b8359b92db7f01001186b5f64dd77eee34e2c8e2eb7a64049",
+    "feature_sha256": "6a5bca4e1b6cb30381c82ce4b924c2280b224515c36efed13a05aaebd2e0e7c4"
+  },
+  "schema": "graftline-current-validation-v1",
+  "scope": "Observed local rerun against supplied case expectations; hashes are not authentication, native parity proof, or complete refusal coverage.",
+  "specimen": {
+    "name": "utf8proc",
+    "refusal_model": "unknown branch/opcode/dependency, memory/budget errors, malformed declaration or unsupported state refuse",
+    "source_boundary": "implementation source and format/normalization specification withheld; public caller ABI declarations and license allowed"
+  },
+  "validation": {
+    "cases": [
+      {
+        "externalCalls": {
+          "malloc": 1,
+          "realloc": 1
+        },
+        "instructions": 187,
+        "label": "empty",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 679,
+        "returnValue": 0
+      },
+      {
+        "externalCalls": {
+          "malloc": 1,
+          "realloc": 1
+        },
+        "instructions": 306943,
+        "label": "random-codepoints",
+        "matched": true,
+        "outputSha256": "a7048718389d11bf90ec288f16db269ee3843f45422cda2550c75644aa5bedfa",
+        "pcodeOps": 1439923,
+        "returnValue": 3559
+      },
+      {
+        "externalCalls": {
+          "malloc": 1,
+          "realloc": 1
+        },
+        "instructions": 188369,
+        "label": "expansions",
+        "matched": true,
+        "outputSha256": "9589932be66550d68a1e1450147af13a01635617e8103c4afdc5056bdc62f5bd",
+        "pcodeOps": 858210,
+        "returnValue": 1020
+      },
+      {
+        "externalCalls": {
+          "malloc": 1,
+          "realloc": 1
+        },
+        "instructions": 169140,
+        "label": "hangul",
+        "matched": true,
+        "outputSha256": "128859390b9200cd6cf8af6d2953f2ee3151915f1a1105bb77259046a2b43d94",
+        "pcodeOps": 797631,
+        "returnValue": 720
+      },
+      {
+        "externalCalls": {
+          "malloc": 1,
+          "realloc": 1
+        },
+        "instructions": 56809,
+        "label": "ordered-marks",
+        "matched": true,
+        "outputSha256": "603fd9599bec962487fe896c696ef3518383b216424f55ad428c3465ff0a5bf8",
+        "pcodeOps": 269852,
+        "returnValue": 296
+      },
+      {
+        "externalCalls": {
+          "malloc": 1,
+          "realloc": 1
+        },
+        "instructions": 28213,
+        "label": "emoji-boundaries",
+        "matched": true,
+        "outputSha256": "6c6b48c91e2a771489ab0f391c20a3ee5f45de518c21405c8cea3e1e5bd37c34",
+        "pcodeOps": 128851,
+        "returnValue": 320
+      },
+      {
+        "externalCalls": {
+          "malloc": 1,
+          "realloc": 1
+        },
+        "instructions": 2077,
+        "label": "line-endings",
+        "matched": true,
+        "outputSha256": "28eaa03fd4aebf0583fb0371040edbe15a2eb6dd493619184058ff1d316e4f6d",
+        "pcodeOps": 9112,
+        "returnValue": 9
+      },
+      {
+        "externalCalls": {},
+        "instructions": 164,
+        "label": "unassigned",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 700,
+        "returnValue": -4
+      },
+      {
+        "externalCalls": {
+          "malloc": 1,
+          "realloc": 1
+        },
+        "instructions": 1396223,
+        "label": "long-casefold",
+        "matched": true,
+        "outputSha256": "d715c4a528882a2ee8902906e6fb32fb9d5d372558b6acb2bde17ebbb5fa9627",
+        "pcodeOps": 6181220,
+        "returnValue": 4420
+      },
+      {
+        "externalCalls": {
+          "malloc": 1,
+          "realloc": 1
+        },
+        "instructions": 995,
+        "label": "embedded-nuls",
+        "matched": true,
+        "outputSha256": "779e6a4a95df9c39331b4cf0241e0a7e2ed6099ea03931de235856f7ae2129d7",
+        "pcodeOps": 4145,
+        "returnValue": 4
+      },
+      {
+        "externalCalls": {
+          "malloc": 1,
+          "realloc": 1
+        },
+        "instructions": 1501,
+        "label": "strip-controls",
+        "matched": true,
+        "outputSha256": "5a0e5fb48086e0f9ea81902ad2bbec5d8cbddc71d6563bf6d5a18815ad9a0955",
+        "pcodeOps": 6508,
+        "returnValue": 4
+      },
+      {
+        "externalCalls": {},
+        "instructions": 91,
+        "label": "overlong",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 320,
+        "returnValue": -3
+      },
+      {
+        "externalCalls": {},
+        "instructions": 109,
+        "label": "surrogate-utf8",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 417,
+        "returnValue": -3
+      },
+      {
+        "externalCalls": {},
+        "instructions": 97,
+        "label": "truncated-utf8",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 358,
+        "returnValue": -3
+      },
+      {
+        "externalCalls": {},
+        "instructions": 113,
+        "label": "outside-unicode",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 433,
+        "returnValue": -3
+      },
+      {
+        "externalCalls": {},
+        "instructions": 52,
+        "label": "incompatible-options",
+        "matched": true,
+        "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pcodeOps": 200,
+        "returnValue": -5
+      }
+    ],
+    "rerun": true,
+    "summary": {
+      "completed": 16,
+      "matched": 16,
+      "refused": 0
+    }
+  }
+}

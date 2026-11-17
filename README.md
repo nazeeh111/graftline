@@ -11,6 +11,15 @@ interpreter and caller-declared argument convention. Python 3.10 or later and
 its standard library are sufficient for the shipped artifacts. No package
 installation, native decoder, target application, API key or service is needed.
 
+[Run and verify the frozen features](#run-verify-extract) · [Complete callable example](docs/presentation/README.md) · [Download the self-contained runner](docs/presentation/worked-example.zip)
+
+<picture>
+ <source media="(max-width: 600px)" srcset="docs/presentation/declared-feature-mobile.png">
+ <img src="docs/presentation/declared-feature.png" alt="Actual isolated Graftline decoder call produces 139363 matching output bytes from 336 compressed bytes through a declared four-register ABI, with explicit virtual memory regions. A separate frozen Unicode feature uses the same interpreter." width="100%">
+</picture>
+
+**The feature stays callable. Its original library stays absent.** The actual CLI and API outputs match; a freshly extracted runner bundle reproduces the bytes with isolated standard-library Python. [Follow the registers, inspect the output and replay the complete example](docs/presentation/README.md).
+
 From this directory, decode the genuine sample:
 
 ```sh

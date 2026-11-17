@@ -1,0 +1,4 @@
+# Preserve exact source-bound records and rendered SVG bytes.
+/docs/presentation/*.json -text -eol
+/docs/presentation/*.svg -text -eol
+/docs/presentation/*-output.txt -text -eol
