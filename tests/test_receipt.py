@@ -31,10 +31,10 @@ class ReceiptTests(unittest.TestCase):
   with self.assertRaises(FileExistsError):publish(self.receipt,{'a':1})
   self.assertEqual(self.receipt.read_bytes(),b'foreign')
   target=self.d/'new'
-  with patch('graftline.receipt.os.link',side_effect=OSError('injected')):
+  with patch('graftline._output.os.link',side_effect=OSError('injected')):
    with self.assertRaises(OSError):publish(target,{'a':1})
   self.assertFalse(target.exists());self.assertFalse(list(self.d.glob('*.pending')))
-  with patch('graftline.receipt.os.fsync',side_effect=OSError('injected write flush failure')):
+  with patch('graftline._output.os.fsync',side_effect=OSError('injected write flush failure')):
    with self.assertRaises(OSError):publish(target,{'a':1})
   self.assertFalse(target.exists());self.assertFalse(list(self.d.glob('*.pending')))
   publish(target,{'a':1});self.assertEqual(json.loads(target.read_text()),{'a':1})

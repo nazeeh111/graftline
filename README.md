@@ -13,6 +13,8 @@ installation, native decoder, target application, API key or service is needed.
 
 [Run and verify the frozen features](#run-verify-extract) · [Complete callable example](docs/presentation/README.md) · [Download the self-contained runner](docs/presentation/worked-example.zip)
 
+The worked-example ZIP preserves its recorded source and receipts. Use the current checkout for the complete-output publication and failed-write recovery described below.
+
 <picture>
  <source media="(max-width: 600px)" srcset="docs/presentation/declared-feature-mobile.png">
  <img src="docs/presentation/declared-feature.png" alt="Actual isolated Graftline decoder call produces 139363 matching output bytes from 336 compressed bytes through a declared four-register ABI, with explicit virtual memory regions. A separate frozen Unicode feature uses the same interpreter." width="100%">
@@ -36,7 +38,7 @@ Normalize compatibility characters and fold case:
 python3 -I -S run.py run features/utf8proc features/utf8proc/example.txt normalized.txt --param options=1070
 ```
 
-Inspect the new output with `cat normalized.txt`. The supplied `Straße ﬁ Ａ Café` becomes `strasse fi a café`. Choose a new output path for another run; existing files are refused. Option value 1070
+Inspect the new output with `cat normalized.txt`. The supplied `Straße ﬁ Ａ Café` becomes `strasse fi a café`. Choose a new output path for another run; existing files are refused. A run stages and flushes the complete output before publishing it. A failed write leaves no partial final file, so you can retry the unoccupied path. If staging cleanup fails after publication, the complete output remains available and stderr identifies the leftover temporary. Option value 1070
 combines the native library's stable, compatibility, composition, ignore and
 case-fold flags. Options are explicit integers, not inferred user intent.
 The frozen transform is **utf8proc API 2.7.0 / Unicode 14.0.0**, even though the
