@@ -41,7 +41,8 @@ def main():
             ret=result['returnValue']
             if ret<0 or ret!=len(result['output']):
                 raise Refusal('Native feature returned error '+str(ret))
-            with a.output.open('xb') as stream:stream.write(result.pop('output'))
+            from ._output import publish_bytes
+            publish_bytes(a.output,result.pop('output'),mode=0o666)
             print(json.dumps(result));return 0
         case_bytes=a.cases.read_bytes()
         results=[];receipt_results=[]

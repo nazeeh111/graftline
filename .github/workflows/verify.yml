@@ -17,6 +17,8 @@ jobs:
         run: python -I -S tests/test_boundaries.py
       - name: Check receipt publication and rerun refusals
         run: python -I -S tests/test_receipt.py
+      - name: Check complete byte output and failed-write recovery
+        run: python -I -S tests/test_output.py
       - name: Compare retained decoder witnesses
         run: python -I -S run.py verify features/zstd features/zstd/cases.json
       - name: Compare retained Unicode witnesses

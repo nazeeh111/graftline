@@ -1,10 +1,9 @@
 """Current local verification receipt; hashes do not authenticate their producer."""
 import hashlib
 import json
-import os
 from pathlib import Path
 import platform
-import tempfile
+from ._output import publish_bytes
 
 
 def digest(data):
@@ -13,7 +12,7 @@ def digest(data):
 
 def identity(feature):
     package = Path(__file__).resolve().parent
-    sources = {name: digest((package / name).read_bytes()) for name in ('__init__.py', '__main__.py', 'api.py', 'runtime.py', 'receipt.py')}
+    sources = {name: digest((package / name).read_bytes()) for name in ('__init__.py', '__main__.py', 'api.py', 'runtime.py', 'receipt.py', '_output.py')}
     licenses = {p.name: digest(p.read_bytes()) for p in sorted(feature.iterdir()) if p.name.startswith('LICENSE') and p.is_file() and not p.is_symlink()}
     return {'engine_source_sha256': sources, 'license_sha256': licenses}
 
@@ -32,15 +31,7 @@ def make(feature, case_bytes, results, summary, observed):
 def publish(path, receipt):
     path = Path(path)
     data = (json.dumps(receipt, indent=2, sort_keys=True) + '\n').encode()
-    fd, temporary = tempfile.mkstemp(prefix='.' + path.name + '.', suffix='.pending', dir=path.parent)
-    try:
-        with os.fdopen(fd, 'wb') as stream:
-            stream.write(data)
-            stream.flush()
-            os.fsync(stream.fileno())
-        os.link(temporary, path)
-    finally:
-        os.unlink(temporary)
+    publish_bytes(path, data)
 
 
 def check(path, current):
