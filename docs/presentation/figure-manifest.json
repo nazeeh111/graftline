@@ -1,0 +1,12 @@
+{
+  "source": "13261db3cf8778157398295f221aac93f975531a",
+  "encoding": "Actual input/output bytes, caller-declared x0-x3 ABI, source virtual regions; diagram not to byte scale",
+  "files": {
+    "journey.json": "613d3281e668ed939a5daef81c8ef015b669df3eed9ea7dc2494b430b37650c1",
+    "figure.py": "b8747857d3dd35c8d5edff0110a8c785a8f5d4e68dec7d9bb9884137e3f4c100",
+    "declared-feature.svg": "5e92ad4ad3e656ed5214665dfbd79ebb7b9fd2d97890f38668111cd2a9053f94",
+    "declared-feature-mobile.svg": "017a23859d7c8b1b43b42cd1ae01db26f96781ed1280e623cef73c294fcb6c02",
+    "declared-feature.png": "452b82a31b0d03f5b101e8a6cb04198ec764ad3d653225ea831ef34b054fe486",
+    "declared-feature-mobile.png": "f8dac8717db2d81a71b674cabd4f5f6f2e49ad5f1a7dd21ff3be4f288d1fa890"
+  }
+}
