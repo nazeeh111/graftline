@@ -11,7 +11,7 @@ interpreter and caller-declared argument convention. Python 3.10 or later and
 its standard library are sufficient for the shipped artifacts. No package
 installation, native decoder, target application, API key or service is needed.
 
-[Run and verify the frozen features](#run-verify-extract) · [Complete callable example](docs/presentation/README.md) · [Download the self-contained runner](docs/presentation/worked-example.zip)
+[Run and verify the frozen features](#run-verify-extract) · [Complete callable example](docs/presentation/README.md) · [Download the self-contained runner](https://raw.githubusercontent.com/nazeeh111/graftline/eb509fde9133a67657d45c96852045918241c4a1/docs/presentation/worked-example.zip)
 
 The worked-example ZIP preserves its recorded source and receipts. Use the current checkout for the complete-output publication and failed-write recovery described below.
 
